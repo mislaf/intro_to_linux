@@ -1,0 +1,24 @@
+
+h1 {
+	text-align: center;
+    color: green;
+}
+
+h2 {
+	text-align: center;
+    color: red;
+}
+
+h3 {
+	text-align: center;
+    color: blue;
+}
+
+.hvala {
+	font-size: 1450%;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    color: red;
+}
