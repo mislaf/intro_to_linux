@@ -358,69 +358,21 @@
 			</ul>
 		</div>
 
-		<!-- Environment and shell variables -->
+		<!-- Starting shell -->
 		<div class="step" data-x="10500" data-y="2000">
 			<div id="title">
-				<h2>Environment and shell variables</h2>
+				<h2>Starting shell</h2>
 			</div>
 		</div>
-		<div class="step" data-x="10500" data-y="2200">
-			<b>Environment variables</b> - defines our environment, e.g. prompt, your home directory, your working directory, the name of your shell
+		<div class="step" data-x="10500" data-y="2100">
+			<b>bash</b> - start another bash istance
 		</div>
-		<div class="step" data-x="10500" data-y="2360">
-			<b>Shell variables</b> - Like local varibles. Can be exported to environment variables.
-		</div>
-		<div class="step terminal" data-x="10500" data-y="2650">
-			<pre>
-$ MYVAR=foo
-$ echo $MYVAR
-foo
-$ bash
-$ echo $MYVAR
-
-$ exit
-$ export $MYVAR
-$ bash
-$ echo $MYVAR
-foo
-			</pre>
-			
-
+		<div class="step" data-x="10500" data-y="2190">
+			<b>bash -c ‘command‘</b> - pass command to another shell -BUT WHY?
 		</div>
 
 
-		<!-- Some common environment variables -->
-		<div class="step" data-x="12000" data-y="2000">
-			<div id="title">
-				<h2>Some common environment variables</h2>
-			</div>
-		</div>
-		<div class="step" data-x="12000" data-y="2120">
-			<b>USER</b> - The name of the logged-in user
-		</div>
-		<div class="step" data-x="12000" data-y="2210">
-			<b>UID</b> - The numeric user id of the logged-in user
-		</div>
-		<div class="step" data-x="12000" data-y="2300">
-			<b>HOME</b> - The user's home directory
-		</div>
-		<div class="step" data-x="12000" data-y="2370">
-			<b>PWD</b> - The current working directory
-		</div>
-		<div class="step" data-x="12000" data-y="2440">
-			<b>SHELL</b> - The name of the shell
-		</div>
-		<div class="step" data-x="12000" data-y="2530">
-			<b>$</b> - The process id (PID) of the running bash shell (or other) process
-		</div>
-		<div class="step" data-x="12000" data-y="2670">
-			<b>PPID</b> - The process id of the process that started this process, i.e. the id of the parent process
-		</div>
-		<div class="step" data-x="12000" data-y="2790">
-			<b>?</b> - The exit code of the last command
-		</div>
-
-		<!-- Working with variables -->
+				<!-- Working with variables -->
 		<div class="step" data-x="13500" data-y="2000">
 			<div id="title">
 				<h2>Working with variables</h2>
@@ -438,18 +390,80 @@ foo
 		<div class="step" data-x="13500" data-y="2340">
 			<b>env</b> - displays the current environment variables
 		</div>
+		<div class="step terminal" data-x="13500" data-y="2500">
+			<pre>
+$ FILE=Amphinicy;ls $FILE || touch $FILE && \
+echo "Created file $FILE";\
+ls $FILE;cp -v $FILE /tmp/;ls /tmp/$FILE;rm $FILE
+			</pre>
+		</div>
 
-		<!-- Starting shell -->
+		<!-- Environment and shell variables -->
 		<div class="step" data-x="15000" data-y="2000">
 			<div id="title">
-				<h2>Starting shell</h2>
+				<h2>Environment and shell variables</h2>
 			</div>
 		</div>
-		<div class="step" data-x="15000" data-y="2100">
-			<b>bash</b> - start another bash istance
+		<div class="step" data-x="15000" data-y="2200">
+			<b>Environment variables</b> - defines our environment, e.g. prompt, your home directory, your working directory, the name of your shell
 		</div>
-		<div class="step" data-x="15000" data-y="2190">
-			<b>bash -c ‘command‘</b> - pass command to another shell
+		<div class="step" data-x="15000" data-y="2400">
+			<b>Shell variables</b> - Like local varibles. Can be exported to environment variables.
+		</div>
+		<div class="step terminal" data-x="15000" data-y="2720">
+			<pre>
+$ MYVAR=foo
+$ echo $MYVAR
+foo
+$ bash
+$ echo $MYVAR
+
+$ exit
+$ export $MYVAR
+$ bash
+$ echo $MYVAR
+foo
+			</pre>
+		</div>
+
+		<!-- Some common environment variables -->
+		<div class="step" data-x="12000" data-y="2000">
+			<div id="title">
+				<h2>Some common environment variables</h2>
+			</div>
+		</div>
+		<div class="step" data-x="12000" data-y="2130">
+			<b>USER</b> - The name of the logged-in user
+		</div>
+		<div class="step" data-x="12000" data-y="2230">
+			<b>UID</b> - The numeric user id of the logged-in user
+		</div>
+		<div class="step" data-x="12000" data-y="2320">
+			<b>HOME</b> - The user's home directory
+		</div>
+		<div class="step" data-x="12000" data-y="2380">
+			<b>PWD</b> - The current working directory
+		</div>
+		<div class="step" data-x="12000" data-y="2440">
+			<b>SHELL</b> - The name of the shell
+		</div>
+		<div class="step" data-x="12000" data-y="2530">
+			<b>$</b> - The process id (PID) of the running bash shell (or other) process
+		</div>
+		<div class="step" data-x="12000" data-y="2670">
+			<b>PPID</b> - The process id of the process that started this process, i.e. the id of the parent process
+		</div>
+		<div class="step" data-x="12000" data-y="2790">
+			<b>?</b> - The exit code of the last command
+		</div>
+		<div class="step terminal" data-x="12000" data-y="2960">
+			<pre>
+$ echo $$
+19106
+$ bash
+$ echo $PPID
+19106
+			</pre>
 		</div>
 
 		<!-- Command history -->
@@ -470,7 +484,7 @@ foo
 		<div class="step" data-x="16500" data-y="2340">
 			<b>!#</b> - the current command you are typing
 		</div>
-		<div class="step" data-x="16500" data-y="2440">
+		<div class="step" data-x="16500" data-y="2450">
 			<b>!string</b> - the most recent command that starts with string
 		</div>
 		<div class="step" data-x="16500" data-y="2560">
@@ -499,17 +513,33 @@ foo
 		<!-- Paths -->
 		<div class="step" data-x="19500" data-y="2000">
 			<div id="title">
-				<h2>Search shortcuts</h2>
+				<h2>RENAME ME</h2>
 			</div>
 		</div>
 		<div class="step" data-x="19500" data-y="2120">
 			If you type a command name, then bash looks for that command on your path
 		</div>
-		<div class="step" data-x="19500" data-y="2220">
+		<div class="step" data-x="19500" data-y="2230">
 			Paths are stored in $PATH
 		</div>
 		<div class="step" data-x="19500" data-y="2340">
 			<b>which</b> and <b>type</b> - commands tell us what command will be executed if you type a particular string
+		</div>
+		<div class="step terminal" data-x="19500" data-y="2660">
+#Add custom path
+		<pre>
+$ echo $PATH
+/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+$ PATH=$PATH:$HOME/bin
+$ echo $PATH
+/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/mislav/bin
+$ echo "echo 'Hello World!'" > /home/mislav/bin/hello
+$ chmod a+x /home/mislav/bin/hello
+$ which hello
+/home/mislav/bin/hello
+$ hello
+Hello World!
+			</pre>
 		</div>
 
 		<!-- Manual (man) pages -->
@@ -521,10 +551,10 @@ foo
 		<div class="step" data-x="21000" data-y="2100">
 			<b>man</b> - gets documentation for Linux commands
 		</div>
-		<div class="step" data-x="21000" data-y="2180">
+		<div class="step" data-x="21000" data-y="2200">
 			<b>whatis</b> - searches man pages for the name
 		</div>
-		<div class="step" data-x="21000" data-y="2260">
+		<div class="step" data-x="21000" data-y="2300">
 			<b>apropos</b> - keyword search of manual pages
 		</div>
 
@@ -535,29 +565,36 @@ foo
 				<h2>Text streams and filters</h2>
 			</div>
 		</div>
-		<div class="step" data-x="22500" data-y="2160">
+		<div class="step" data-x="22500" data-y="2170">
 			<b>Text filtering</b> is the process of taking an input stream of text and performing some conversion on the text before sending it to an output stream.
 		</div>
-		<div class="step" data-x="22500" data-y="2380">
+		<div class="step" data-x="22500" data-y="2420">
 			A <b>stream</b> is nothing more than a sequence of bytes that can be read or written using library functions that hide the details of an underlying device from the application.
 		</div>
 
 		<!-- Piping with | -->
-		<div class="step" data-x="22500" data-y="2540">
+		<div class="step" data-x="22500" data-y="2600">
 			<div id="title">
 				<h2>Piping with |</h2>
 			</div>
 		</div>
-		<div class="step" data-x="22500" data-y="2640">
+		<div class="step" data-x="22500" data-y="2680">
 			<b>echo -e "2\n3\n1"|sort</b> - sorting
 		</div>
-		<div class="step" data-x="22500" data-y="2740">
+		<div class="step" data-x="22500" data-y="2780">
 			<div id="title">
 				<h2>Output redirection with ></h2>
 			</div>
 		</div>
-		<div class="step" data-x="22500" data-y="2860">
+		<div class="step" data-x="22500" data-y="2870">
 			<b>echo -e "2\n3\n1" > file_name </b> - redirect to a file
+		</div>
+		<div class="step terminal" data-x="22500" data-y="3010">
+
+#Empty file
+		<pre>
+$ echo "" > file
+			</pre>
 		</div>
 
 		<!-- cat -->
@@ -578,6 +615,7 @@ foo
 		<div class="step" data-x="24000" data-y="2340">
 			<b>cat text*</b> - concatenate files starting with text
 		</div>
+
 		<!-- od -->
 		<div class="step" data-x="24000" data-y="2460">
 			<div id="title">
@@ -603,6 +641,7 @@ foo
 		<div class="step" data-x="25500" data-y="2200">
 			<b>|wc -l</b> - count number of lines in a stream
 		</div>
+
 		<!-- head -->
 		<div class="step" data-x="25500" data-y="2300">
 			<div id="title">
@@ -615,6 +654,7 @@ foo
 		<div class="step" data-x="25500" data-y="2530">
 			<b>|head -n 20 </b> - display the first 20 lines from a stream
 		</div>	
+
 		<!-- tail -->
 		<div class="step" data-x="25500" data-y="2640">
 			<div id="title">
@@ -644,11 +684,12 @@ foo
 			<b>tr</b> - translate or delete characters
 		</div>
 		<div class="step" data-x="27000" data-y="2160">
-			<b>|tr “    ” “\t”</b> - replaces 4 spaces for a tab
+			<b>|tr “&nbsp&nbsp&nbsp&nbsp” “\t”</b> - replaces 4 spaces for a tab
 		</div>
-		<div class="step" data-x="27000" data-y="2260">
+		<div class="step" data-x="27000" data-y="2270">
 			<b>|tr -d “\n”</b> - deletes all new lines from a stream
 		</div>
+
 		<!-- uniq -->
 		<div class="step" data-x="27000" data-y="2400">
 			<div id="title">
@@ -665,19 +706,19 @@ foo
 				<h2>sort</h2>
 			</div>
 		</div>
-		<div class="step" data-x="28500" data-y="2080">
+		<div class="step" data-x="28500" data-y="2090">
 			<b>sort file_name</b> - sort a file alphabetically
 		</div>
-		<div class="step" data-x="28500" data-y="2160">
+		<div class="step" data-x="28500" data-y="2200">
 			<b>sort file_name -c</b> - check if file is sorted
 		</div>
-		<div class="step" data-x="28500" data-y="2240">
+		<div class="step" data-x="28500" data-y="2280">
 			<b>|sort -n </b> - numeric sort
 		</div>
-		<div class="step" data-x="28500" data-y="2320">
+		<div class="step" data-x="28500" data-y="2340">
 			<b>|sort -r </b> - reverse sort
 		</div>
-		<div class="step" data-x="28500" data-y="2400">
+		<div class="step" data-x="28500" data-y="2410">
 			<b>|sort -R</b> - random sort
 		</div>
 
@@ -693,6 +734,7 @@ foo
 		<div class="step" data-x="30000" data-y="2180">
 			<b>cut -d':' -f1 /etc/passwd </b> - display only usernames from /etc/passwd file
 		</div>
+		
 		<!-- paste -->
 		<div class="step" data-x="30000" data-y="2300">
 			<div id="title">
@@ -702,7 +744,7 @@ foo
 		<div class="step" data-x="30000" data-y="2410">
 			<b>paste</b> - pastes lines from two or more files side-by-side
 		</div>
-		<div class="step" data-x="30000" data-y="2530">
+		<div class="step" data-x="30000" data-y="2540">
 			<b>ls -1|paste -d',' -s</b> - displays files in a directory as the comma separated list
 		</div>
 
@@ -738,6 +780,8 @@ Pear Yellow
 		</div>
 
 <!-- JOIN? -->
+
+<--
 
 	</div>
 
