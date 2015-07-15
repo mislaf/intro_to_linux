@@ -513,7 +513,7 @@ $ echo $PPID
 		<!-- Paths -->
 		<div class="step" data-x="19500" data-y="2000">
 			<div id="title">
-				<h2>RENAME ME</h2>
+				<h2>Paths</h2>
 			</div>
 		</div>
 		<div class="step" data-x="19500" data-y="2120">
@@ -734,7 +734,7 @@ $ echo "" > file
 		<div class="step" data-x="30000" data-y="2180">
 			<b>cut -d':' -f1 /etc/passwd </b> - display only usernames from /etc/passwd file
 		</div>
-		
+
 		<!-- paste -->
 		<div class="step" data-x="30000" data-y="2300">
 			<div id="title">
@@ -779,9 +779,130 @@ Pear Yellow
 			</pre>
 		</div>
 
-<!-- JOIN? -->
+		<!-- Join -->
+		<div class="step" data-x="33000" data-y="2000">
+			<div id="title">
+				<h2>join</h2>
+			</div>
+		</div>
+		<div class="step" data-x="33000" data-y="2100">
+			<b>join</b> - joins files based on a matching field
+		</div>
+		<div class="step terminal" data-x="33000" data-y="2350">
+			<pre>
+$ cat fruits
+1 Banana
+2 Ananas
+$cat prices
+1 12kn
+2 14kn
+$ join fruits prices
+1 Banana 12kn
+2 Ananas 14kn
+			</pre>
+		</div>
 
-<--
+File and directory management
+
+Slika
+
+pwd - path to our current location
+
+cd - change directory
+cd path_to_directory
+cd .. - one level up
+cd - - last location
+cd - go to home directory
+cd ~ - go to home directory
+cd . - go to current directory
+
+ls - list files in a directory
+ls -a - list all files in the directory, including hidden
+ls -F - display type of file
+/ - directory
+* - executable
+@ - symbolic link
+(none) - plain file
+
+ls -l - long display
+1. File type - d (directory), - (plain file), l (Symbolic link), p (Named pipe), c (Character special device), b (Block special device)
+2. Permissions
+3. Hard link count
+4. User owner
+5. Group owner
+6. File size in bytes
+7. Date and time file was created or last modified
+8. Name of file
+
+Primjer
+
+ls -full-time 
+ls -h - human readable size formats
+ls -r - reverse sort
+ls -R - recursive
+ls -S - sort by size
+ls -t - sort by modification time
+ls -1 - display one column
+
+create and remove directory
+mkdir - make new directory
+mkdir dir_name
+mkdir dir1 dir2 dir3
+mkdir -p dir1/dir2
+rmdir - remove empty directory
+rmdir dir_name
+
+copy, move and delete
+cp - copy file or directory
+target is existing dir, will copy to existing dir
+target is a file, will create or replace
+mv - move file or directory
+rm - delete file
+rm -r - removes non-empty directory
+
+cp -f - will cause cp to attempt to remove an existing target file even if it is not writable
+cp -i - will ask for confirmation before attempting to replace an existing file
+cp -b - will make a backup of any files that would be replaced
+rm accepts -i and -f
+cp -r and rm -r - recursive copy and delete
+
+Wildcards
+? - matches any single character
+* - matches any string, including an empty string
+[ - introduces a character class
+[0-9a-fA-F] - any upper or lower case hexadecimal digit
+[!0-9] - any character except the digits 0 through 9
+
+Finding files
+find . -name "*test*" - find all files and directories that have test in their name
+find . -name "*test*" -type d - search for all directories that have test in their name
+find . -name "*test*" -type f - search for all files that have test in their name
+find . -size 0 - find empty files (-empty)
+find . -size +50M -size -100M - find files between 50MB and 100MB
+find . -name "*test*" -ls - use ls command output as display
+find . -name "*test*" -exec rm '{}' \; - remove files
+find . -name "*.htm" -exec mv '{}' '{}l' \; - rename .htm files to .html files
+find . -mtime +7 - files older than 7 days
+find . -mmin -60 - files modified within 1 hour
+locate file_name - will search for file name, update status with updatedb as root
+
+Identifying files
+file * - prints files types in current directory 
+file -i * - prints files types as MIME string
+
+Compressing/Decompressing files
+tar cvzf archive.tar.gz *- compress files
+tar xvzf archive.tar.gz * - decompress files
+
+Streams, pipes, and redirects
+Agenda:
+Redirect the standard IO streams: standard input, standard output, and standard error
+Pipe output from one command to the input of another
+Send output to both stdout and a file
+Use command output as arguments to another command
+
+
+
 
 	</div>
 
